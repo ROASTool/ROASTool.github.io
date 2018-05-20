@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+	<meta charset="utf-8" />
+	<title>ROASTool | Project Cost & Release</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<link href="../media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="../media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+	<link href="../media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="../media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+	<link href="../media/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="../media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+	<link href="../media/css/light.css" rel="stylesheet" type="text/css" id="style_color"/>
+	<link href="../media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+	<!-- END GLOBAL MANDATORY STYLES -->
+	<link rel="shortcut icon" href="../media/image/favicon.ico" />
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="page-header-fixed page-footer-fixed">
+	<!-- BEGIN HEADER -->
+	<div class="header navbar navbar-inverse navbar-fixed-top">
+		<!-- BEGIN TOP NAVIGATION BAR -->
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<!-- BEGIN LOGO -->
+				<a class="brand" href="/">
+				<img src="../media/image/logo.png" alt="logo" />
+				</a>
+				<!-- END LOGO -->
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+				<a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+					<img src="../media/image/menu-toggler.png" alt="" />
+				</a>
+				<!-- END RESPONSIVE MENU TOGGLER -->
+			</div>
+		</div>
+		<!-- END TOP NAVIGATION BAR -->
+	</div>
+	<!-- END HEADER -->
+	<!-- BEGIN CONTAINER -->
+	<div class="page-container row-fluid">
+		<!-- BEGIN SIDEBAR -->
+		<div class="page-sidebar nav-collapse collapse">
+			<!-- BEGIN SIDEBAR MENU -->        
+			<ul class="page-sidebar-menu">
+				<li>
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+					<div class="sidebar-toggler hidden-phone"></div>
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+				</li>
+				<li>
+					<a href="/visual-charts">
+						<i class="icon-bar-chart"></i> 
+						<span class="title">Visual Charts</span>
+					</a>
+				</li>
+				<li name="Projects">
+					<a href="javascript:;" name="Projects">
+						<i class="icon-briefcase"></i> 
+						<span class="title">Projects</span>
+						<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">
+						<li name="newProject">
+							<a href="javascript:;" name="newProject">
+							New Project
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+		<!-- END SIDEBAR -->
+		<!-- BEGIN PAGE -->  
+		<div class="page-content">
+			<!-- BEGIN RENAME PROJECT MODAL FORM-->
+			<div id="renameProject" class="modal hide">
+				<div class="modal-header">
+					<button data-dismiss="modal" class="close" type="button"></button>
+					<h3>Rename This Project</h3>
+				</div>
+				<div class="modal-body">
+					<form action="#" class="form-horizontal" id="rename_form">
+						<div class="alert alert-error hide">
+							<button class="close" data-dismiss="alert"></button>
+							You have some form errors. Please check below.
+						</div>
+						<div class="alert alert-success hide">
+							<button class="close" data-dismiss="alert"></button>
+							Your form validation is successful!
+						</div>
+						<div class="control-group">
+							<input type="text" class="span12 m-wrap" name="newTitle" id="newTitle" placeholder="Maximum title length: 20 characters" />
+						</div>
+						<button name="submit" type="submit" style="float:right" class="btn green">Rename</button>
+					</form>
+				</div>
+			</div>
+			<!-- END RENAME PROJECT MODAL FORM-->
+			<!-- BEGIN PAGE CONTAINER-->
+			<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->   
+				<div class="row-fluid">
+					<div class="span12">
+						<h3 class="page-title">
+							<small>Project Cost & Release</small>
+							<a href="#renameProject" data-toggle="modal" style="float:right" class="btn red mini">
+								<i class="icon-pencil"></i>
+								&nbsp;&nbsp; Rename Project
+							</a>
+						</h3>
+						<ul class="breadcrumb">
+							<li>
+								<a href="javascript:;">Projects</a>
+								<span class="icon-angle-right"></span>
+							</li>
+							<li>
+								<a name="projectTitle" href="javascript:;"></a>
+								<span class="icon-angle-right"></span>
+							</li>
+							<li>
+								<a href="javascript:;">Expected Cost & Release</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- END PAGE HEADER-->
+				<!-- BEGIN PAGE CONTENT-->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="portlet box yellow" id="form_cost_release">
+							<div class="portlet-title">
+								<div class="caption">
+									<i class="icon-reorder"></i> Expected Project Costs and Resource Release Benefits - <span class="step-title">Phase 1 of 3</span>
+								</div>
+								<div class="tools hidden-phone">
+									<a href="javascript:;" class="collapse"></a>
+								</div>
+							</div>
+							<div class="portlet-body form">
+								<!-- BEGIN FORM-->
+								<form action="#" class="form-horizontal" id="submit_form">
+									<div class="form-wizard">
+										<div class="navbar steps">
+											<div class="navbar-inner">
+												<ul class="row-fluid">
+													<li class="span4">
+														<a href="#phase1" data-toggle="tab" class="step active">
+														<span class="number">1</span>
+														<span class="desc"><i class="icon-ok"></i> Planning Phase</span>   
+														</a>
+													</li>
+													<li class="span4">
+														<a href="#phase2" data-toggle="tab" class="step">
+														<span class="number">2</span>
+														<span class="desc"><i class="icon-ok"></i> Pilot Phase</span>   
+														</a>
+													</li>
+													<li class="span4">
+														<a href="#phase3" data-toggle="tab" class="step">
+														<span class="number">3</span>
+														<span class="desc"><i class="icon-ok"></i> Implementation Phase</span>   
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div id="bar" class="progress progress-success progress-striped">
+											<div class="bar"></div>
+										</div>
+										<div class="tab-content">
+											<div class="alert alert-error hide">
+												<button class="close" data-dismiss="alert"></button>
+												You have some form errors. Please check below.
+											</div>
+											<div class="alert alert-success hide">
+												<button class="close" data-dismiss="alert"></button>
+												Your form validation is successful!
+											</div>
+											<div class="tab-pane active" id="phase1">
+												<h3 class="block">Provide Details for Planning Phase</h3>
+												<h4 class="form-section">Cost</h4>
+												<div class="control-group">
+													<label class="control-label">Phase Length<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span6 m-wrap" name="quaterNumber" id="quaterNumberPhase1" />
+														<span class="help-inline">Provide the number of quarters (0 ~ 5)</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Number of FTEs<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span6 m-wrap" name="fteNumberCost" id="fteNumberCostPhase1" />
+														<span class="help-inline">Provide the number of FTEs per quarter</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Operating Expense<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span6 m-wrap" name="operatingMoneyCost" id="operatingMoneyCostPhase1" />
+														<span class="help-inline">Provide the operating expense per quarter</span>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane" id="phase2">
+												<h3 class="block">Provide Details for Pilot Phase</h3>
+												<h4 class="form-section">Cost</h4>
+												<div class="control-group">
+													<label class="control-label">Phase Length<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span6 m-wrap" name="quaterNumber" id="quaterNumberPhase2" />
+														<span class="help-inline">Provide the number of quarters (0 ~ 5)</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Number of FTEs<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span6 m-wrap" name="fteNumberCost" id="fteNumberCostPhase2" />
+														<span class="help-inline">Provide the number of FTE per quarter</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Operating Expense<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span6 m-wrap" name="operatingMoneyCost" id="operatingMoneyCostPhase2" />
+														<span class="help-inline">Provide the operating expense per quarter</span>
+													</div>
+												</div>
+												<h4 class="form-section">Release</h4>
+												<div class="control-group">
+													<label class="control-label">Number of FTEs<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span6 m-wrap" name="fteNumberRelease" id="fteNumberReleasePhase2" />
+														<span class="help-inline">Provide the number of FTE per quarter</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Operating Expense<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span6 m-wrap" name="operatingMoneyRelease" id="operatingMoneyReleasePhase2" />
+														<span class="help-inline">Provide the operating expense per quarter</span>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane" id="phase3">
+												<h3 class="block">Provide Details for Implementation Phase</h3>
+												<h4 class="form-section">Cost</h4>
+												<div class="control-group">
+													<label class="control-label">Phase Length<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span6 m-wrap" name="quaterNumber" id="quaterNumberPhase3" />
+														<span class="help-inline">Provide the number of quarters (0 ~ 5)</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Number of FTEs<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span6 m-wrap" name="fteNumberCost" id="fteNumberCostPhase3" />
+														<span class="help-inline">Provide the number of FTE per quarter</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Operating Expense<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span6 m-wrap" name="operatingMoneyCost" id="operatingMoneyCostPhase3" />
+														<span class="help-inline">Provide the operating expense per quarter</span>
+													</div>
+												</div>
+												<h4 class="form-section">Release</h4>
+												<div class="control-group">
+													<label class="control-label">Number of FTEs<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span6 m-wrap" name="fteNumberRelease" id="fteNumberReleasePhase3" />
+														<span class="help-inline">Provide the number of FTE per quarter</span>
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">Operating Expense<span class="required">*</span></label>
+													<div class="controls">
+														<input type="text" class="span6 m-wrap" name="operatingMoneyRelease" id="operatingMoneyReleasePhase3" />
+														<span class="help-inline">Provide the operating expense per quarter</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-actions clearfix">
+											<a href="javascript:;" class="btn button-previous">
+											<i class="m-icon-swapleft"></i> Back 
+											</a>
+											<a href="javascript:;" class="btn blue button-next">
+											Continue <i class="m-icon-swapright m-icon-white"></i>
+											</a>
+											<button name="submit" type="submit" class="btn green">Submit</button>
+										</div>
+									</div>
+								</form>
+								<!-- End FORM-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END PAGE CONTENT-->         
+			</div>
+			<!-- END PAGE CONTAINER-->
+		</div>
+		<!-- END PAGE -->  
+	</div>
+	<!-- END CONTAINER -->
+	<!-- BEGIN FOOTER -->
+	<div class="footer">
+		<div class="footer-inner">
+			2018 &copy; ROASTool by <a href="https://isaacguan.github.io/" target="_blank" style="color:#5DADEC">Yanran Guan</a> @ <a href="http://www.inspection.gc.ca/" target="_blank" style="color:#5DADEC">CFIA</a>
+		</div>
+		<div class="footer-tools">
+			<span class="go-top">
+			<i class="icon-angle-up"></i>
+			</span>
+		</div>
+	</div>
+	<!-- END FOOTER -->
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+	<!-- BEGIN CORE PLUGINS -->
+	<script src="../media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+	<script src="../media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+	<script src="../media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
+	<script src="../media/js/bootstrap.min.js" type="text/javascript"></script>
+	<!--[if lt IE 9]>
+	<script src="../media/js/excanvas.min.js"></script>
+	<script src="../media/js/respond.min.js"></script>  
+	<![endif]-->   
+	<script src="../media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+	<script src="../media/js/jquery.blockui.min.js" type="text/javascript"></script>  
+	<script src="../media/js/jquery.cookie.min.js" type="text/javascript"></script>
+	<script src="../media/js/jquery.uniform.min.js" type="text/javascript" ></script>
+	<!-- END CORE PLUGINS -->
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+	<script type="text/javascript" src="../media/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../media/js/additional-methods.min.js"></script>
+	<script type="text/javascript" src="../media/js/jquery.bootstrap.wizard.min.js"></script>
+	<!-- END PAGE LEVEL PLUGINS -->
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+	<script src="../media/js/app.js"></script>
+	<script src="../media/js/projects.js"></script>
+	<script src="../media/js/form-cost-release.js"></script>
+	<script src="../media/js/form-rename-project.js"></script>
+	<!-- END PAGE LEVEL SCRIPTS -->
+	<script>
+		jQuery(document).ready(function() {
+			// initiate layout and plugins
+			App.init();
+
+			Projects.loadProjects();
+			Projects.setupCurrentProject(1);
+
+			Projects.addProject();
+			Projects.selectProject();
+
+			Projects.showProjectCostRelease();
+
+			FormCostRelease.init();
+			FormRenameProject.init();
+		});
+	</script>
+	<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>
