@@ -10,8 +10,8 @@ var Projects = function () {
 						&& (projects[projects.length - 1].costRelease.quaterNumberPhase1 == null
 						|| projects[projects.length - 1].complexityRisk.cost == null)) {
 						alert("Please first fill out the project " + projects[projects.length - 1].title);
-					} else if (projects.length >= 4) {
-						alert("Add 4 projects at most!");
+					} else if (projects.length >= 10) {
+						alert("Add 10 projects at most!");
 					} else {
 						let project_placeholder = {
 							"title": "Project " + (projects.length + 1),
