@@ -205,6 +205,14 @@
 	<script src="../media/js/visual-charts.js"></script>
 	<script>
 		jQuery(document).ready(function() {
+			if (window.localStorage.getItem("current_project") == null) {
+				window.location.href = '/';
+				alert("ok");
+			}
+
+			if (window.localStorage.getItem("projects") == null) {
+				window.location.href = '/';
+			}
 
 			// initiate layout and plugins
 			App.init();

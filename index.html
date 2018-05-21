@@ -22,11 +22,15 @@
 	<!-- END CORE PLUGINS -->
 	<script type="text/javascript">
 
-		var current_project = -1;
-		window.localStorage.setItem("current_project", current_project);
+		if (window.localStorage.getItem("current_project") == null) {
+			var current_project = -1;
+			window.localStorage.setItem("current_project", current_project);
+		}
 
-		var projects = [];
-		window.localStorage.setItem("projects", JSON.stringify(projects));
+		if (window.localStorage.getItem("projects") == null) {
+			var projects = [];
+			window.localStorage.setItem("projects", JSON.stringify(projects));
+		}
 
 		window.location.href = '/visual-charts';
 
