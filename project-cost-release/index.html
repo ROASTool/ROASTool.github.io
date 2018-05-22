@@ -82,13 +82,13 @@
 		<!-- BEGIN PAGE -->  
 		<div class="page-content">
 			<!-- BEGIN RENAME PROJECT MODAL FORM-->
-			<div id="renameProject" class="modal hide">
+			<div id="editProject" class="modal hide">
 				<div class="modal-header">
 					<button data-dismiss="modal" class="close" type="button"></button>
-					<h3>Rename This Project</h3>
+					<h3>Edit This Project</h3>
 				</div>
 				<div class="modal-body">
-					<form action="#" class="form-horizontal" id="rename_form">
+					<form action="#" class="form-horizontal" id="edit_form">
 						<div class="alert alert-error hide">
 							<button class="close" data-dismiss="alert"></button>
 							You have some form errors. Please check below.
@@ -98,9 +98,10 @@
 							Your form validation is successful!
 						</div>
 						<div class="control-group">
-							<input type="text" class="span12 m-wrap" name="newTitle" id="newTitle" placeholder="Maximum title length: 20 characters" />
+							<input type="text" class="span12 m-wrap" name="newTitle" id="newTitle" placeholder="Rename the project with a maximum of 20 characters" />
 						</div>
 						<button name="submit" type="submit" style="float:right" class="btn green">Rename</button>
+						<a name="delete" href="javascript:;" style="float:right; margin-right: 10px" class="btn red">Delete This Project</a>
 					</form>
 				</div>
 			</div>
@@ -112,9 +113,9 @@
 					<div class="span12">
 						<h3 class="page-title">
 							<small>Project Cost & Release</small>
-							<a href="#renameProject" data-toggle="modal" style="float:right" class="btn red mini">
+							<a href="#editProject" data-toggle="modal" style="float:right" class="btn red mini">
 								<i class="icon-pencil"></i>
-								&nbsp;&nbsp; Rename Project
+								&nbsp;&nbsp; Edit Project
 							</a>
 						</h3>
 						<ul class="breadcrumb">
@@ -351,7 +352,7 @@
 	<script src="../media/js/app.js"></script>
 	<script src="../media/js/projects.js"></script>
 	<script src="../media/js/form-cost-release.js"></script>
-	<script src="../media/js/form-rename-project.js"></script>
+	<script src="../media/js/form-edit-project.js"></script>
 	<!-- END PAGE LEVEL SCRIPTS -->
 	<script>
 		jQuery(document).ready(function() {
@@ -375,7 +376,7 @@
 			Projects.showProjectCostRelease();
 
 			FormCostRelease.init();
-			FormRenameProject.init();
+			FormEditProject.init();
 		});
 	</script>
 	<!-- END JAVASCRIPTS -->

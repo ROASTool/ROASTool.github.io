@@ -1,10 +1,10 @@
-var FormRenameProject = function () {
+var FormEditProject = function () {
 
 	return {
 
 		init: function () {
 
-			var form = $('#rename_form');
+			var form = $('#edit_form');
 			var error = $('.alert-error', form);
 			var success = $('.alert-success', form);
 
@@ -52,6 +52,16 @@ var FormRenameProject = function () {
 					window.reload();
 				}
 
+			});
+
+			$("#edit_form a[name='delete']").click(function () {
+				if (confirm("Please click OK to confirm deletion")) {
+					let projects = JSON.parse(window.localStorage.getItem("projects"));
+					let current_project = parseInt(window.localStorage.getItem("current_project"));
+					projects.splice(current_project, 1);
+					window.localStorage.setItem("projects", JSON.stringify(projects));
+					window.location.replace("/");
+				}
 			});
 
 		}
