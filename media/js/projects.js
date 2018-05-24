@@ -118,10 +118,10 @@ var Projects = function () {
 					$("a[name='project" + current_project + "']").find(".arrow").addClass("open");
 					switch (operation) {
 						case 1:
-						$("#costReleaseProject" + current_project).parent().addClass("active open");
+						$("#costReleaseProject" + current_project).parent().addClass("active");
 						break;
 						case 2:
-						$("#complexityRiskProject" + current_project).parent().addClass("active open");
+						$("#complexityRiskProject" + current_project).parent().addClass("active");
 						break;
 					}
 				}
