@@ -4,14 +4,14 @@ var FormComplexityRisk = function () {
 
 		init: function () {
 
-			var form = $('#submit_form');
-			var error = $('.alert-error', form);
-			var success = $('.alert-success', form);
+			var form = $("#submit_form");
+			var error = $(".alert-error", form);
+			var success = $(".alert-success", form);
 
 			form.validate({
 				doNotHideMessage: true,
-				errorElement: 'span',
-				errorClass: 'help-inline',
+				errorElement: "span",
+				errorClass: "help-inline",
 				focusInvalid: false,
 				rules: {
 					cost: {
@@ -74,16 +74,16 @@ var FormComplexityRisk = function () {
 				},
 
 				highlight: function (element) {
-					$(element).closest('.help-inline').removeClass('ok');
-					$(element).closest('.control-group').removeClass('success').addClass('error');
+					$(element).closest(".help-inline").removeClass("ok");
+					$(element).closest(".control-group").removeClass("success").addClass("error");
 				},
 
 				unhighlight: function (element) {
-					$(element).closest('.control-group').removeClass('error');
+					$(element).closest(".control-group").removeClass("error");
 				},
 
 				success: function (label) {
-					label.addClass('valid ok').closest('.control-group').removeClass('error').addClass('success');
+					label.addClass("valid ok").closest(".control-group").removeClass("error").addClass("success");
 				},
 
 				submitHandler: function (form) {

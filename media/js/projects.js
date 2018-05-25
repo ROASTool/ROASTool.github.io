@@ -87,7 +87,7 @@ var Projects = function () {
 					if (window.localStorage.getItem("current_project") != null) {
 						window.localStorage.setItem("current_project", current_project);
 					}
-					window.location.replace('/project-cost-release');
+					window.location.replace("/project-cost-release");
 				}
 			});
 
@@ -98,7 +98,7 @@ var Projects = function () {
 					if (window.localStorage.getItem("current_project") != null) {
 						window.localStorage.setItem("current_project", current_project);
 					}
-					window.location.replace('/project-complexity-risk');
+					window.location.replace("/project-complexity-risk");
 				}
 			});
 
