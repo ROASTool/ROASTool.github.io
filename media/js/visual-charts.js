@@ -54,24 +54,6 @@ var VisualCharts = function () {
 						}]
 					},
 					tooltips: {
-						callbacks: {
-							label: function(tooltipItem, data) {
-								var value = data.datasets[0].data[tooltipItem.index];
-								if (value < 0) {
-									value = value.toString();
-									operator = value.substr(0, 1);
-									value = value.substr(1, value.length - 1);
-									value = value.split(/(?=(?:...)*$)/);
-									value = value.join(",");
-									return (operator + value);
-								} else {
-									value = value.toString();
-									value = value.split(/(?=(?:...)*$)/);
-									value = value.join(",");
-									return value;
-								}
-							}
-						},
 						enabled: true
 					}
 				},
